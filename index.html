@@ -32,10 +32,7 @@
         }
     </script>
     <style>
-        body {
-            background-color: #FDFBF7;
-            color: #2C2A29;
-        }
+        body { background-color: #FDFBF7; color: #2C2A29; }
         .drop-cap::first-letter {
             font-family: 'Playfair Display', serif;
             font-size: 3.5rem;
@@ -45,15 +42,10 @@
             line-height: 1;
             color: #1E3A8A;
         }
-        .chapter-bg {
-            background: linear-gradient(to bottom, rgba(30, 58, 138, 0.03), transparent);
-        }
-        
-        /* Sidebar Scrollable Area */
+        .chapter-bg { background: linear-gradient(to bottom, rgba(30, 58, 138, 0.03), transparent); }
         .sidebar-nav::-webkit-scrollbar { width: 4px; }
         .sidebar-nav::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
 
-        /* Print optimization */
         @media print {
             #sidebar, #mobile-header, #share-section { display: none !important; }
             main { margin-left: 0 !important; width: 100% !important; }
@@ -64,68 +56,62 @@
 </head>
 <body class="font-serif antialiased flex flex-col md:flex-row min-h-screen">
 
-    <!-- Header para Mobile -->
+    <!-- Header Mobile -->
     <header id="mobile-header" class="md:hidden flex items-center justify-between p-4 bg-white border-b border-gray-100 sticky top-0 z-50">
-        <div class="flex items-center gap-2">
-            <div class="w-8 h-8 bg-book-accent rounded flex items-center justify-center">
-                <i data-lucide="scale" class="text-white w-4 h-4"></i>
-            </div>
-            <span class="font-heading font-bold text-book-accent">IA na Advocacia</span>
+        <div class="flex items-center gap-2 text-book-accent">
+            <i data-lucide="scale" class="w-6 h-6"></i>
+            <span class="font-heading font-bold">IA na Advocacia</span>
         </div>
         <button id="menu-btn" class="p-2 hover:bg-gray-100 rounded-lg">
             <i data-lucide="menu" class="w-6 h-6"></i>
         </button>
     </header>
 
-    <!-- Sidebar / Índice Lateral (Fixa no Desktop) -->
-    <aside id="sidebar" class="fixed inset-y-0 left-0 z-40 w-64 lg:w-72 bg-white border-r border-gray-200 transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out flex flex-col shadow-xl md:shadow-none">
+    <!-- Sidebar / Índice -->
+    <aside id="sidebar" class="fixed inset-y-0 left-0 z-40 w-64 lg:w-72 bg-white border-r border-gray-200 transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out flex flex-col">
         <div class="p-8 border-b border-gray-50">
             <h1 class="font-heading font-extrabold text-2xl text-book-accent">IA na Advocacia</h1>
-            <p class="text-[10px] font-sans text-gray-400 uppercase tracking-[0.2em] mt-1">Guia Prático com Claude</p>
+            <p class="text-[10px] font-sans text-gray-400 uppercase tracking-[0.2em] mt-1 text-center md:text-left">Guia Prático</p>
         </div>
         
-        <nav class="flex-1 overflow-y-auto p-6 space-y-2 sidebar-nav font-sans">
-            <a href="#capa" class="flex items-center gap-3 py-2.5 px-4 rounded-lg text-sm text-gray-600 hover:bg-blue-50 hover:text-book-accent transition-all group">
-                <i data-lucide="home" class="w-4 h-4 opacity-50 group-hover:opacity-100"></i> Capa
+        <nav class="flex-1 overflow-y-auto p-6 space-y-2 sidebar-nav font-sans text-sm">
+            <a href="#capa" class="flex items-center gap-3 py-2 px-4 rounded-lg text-gray-600 hover:bg-blue-50 hover:text-book-accent transition">
+                <i data-lucide="home" class="w-4 h-4"></i> Capa
             </a>
-            <a href="#apresentacao" class="flex items-center gap-3 py-2.5 px-4 rounded-lg text-sm text-gray-600 hover:bg-blue-50 hover:text-book-accent transition-all group">
-                <i data-lucide="book-open" class="w-4 h-4 opacity-50 group-hover:opacity-100"></i> Apresentação
+            <a href="#apresentacao" class="flex items-center gap-3 py-2 px-4 rounded-lg text-gray-600 hover:bg-blue-50 hover:text-book-accent transition">
+                <i data-lucide="book-open" class="w-4 h-4"></i> Apresentação
             </a>
-            <div class="pt-4 pb-2 px-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest">Capítulos</div>
-            <a href="#capitulo-1" class="flex items-center gap-3 py-2.5 px-4 rounded-lg text-sm text-gray-600 hover:bg-blue-50 hover:text-book-accent transition-all group">
+            <div class="pt-4 pb-2 px-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest">Conteúdo</div>
+            <a href="#capitulo-1" class="flex items-center gap-3 py-2 px-4 rounded-lg text-gray-600 hover:bg-blue-50 hover:text-book-accent transition">
                 <span class="w-4 text-center font-bold opacity-30">1</span> O Cenário Atual
             </a>
-            <a href="#capitulo-2" class="flex items-center gap-3 py-2.5 px-4 rounded-lg text-sm text-gray-600 hover:bg-blue-50 hover:text-book-accent transition-all group">
+            <a href="#capitulo-2" class="flex items-center gap-3 py-2 px-4 rounded-lg text-gray-600 hover:bg-blue-50 hover:text-book-accent transition">
                 <span class="w-4 text-center font-bold opacity-30">2</span> Por que o Claude?
             </a>
-            <a href="#capitulo-3" class="flex items-center gap-3 py-2.5 px-4 rounded-lg text-sm text-gray-600 hover:bg-blue-50 hover:text-book-accent transition-all group">
+            <a href="#capitulo-3" class="flex items-center gap-3 py-2 px-4 rounded-lg text-gray-600 hover:bg-blue-50 hover:text-book-accent transition">
                 <span class="w-4 text-center font-bold opacity-30">3</span> Aplicações Práticas
             </a>
-            <a href="#capitulo-4" class="flex items-center gap-3 py-2.5 px-4 rounded-lg text-sm text-gray-600 hover:bg-blue-50 hover:text-book-accent transition-all group">
+            <a href="#capitulo-4" class="flex items-center gap-3 py-2 px-4 rounded-lg text-gray-600 hover:bg-blue-50 hover:text-book-accent transition">
                 <span class="w-4 text-center font-bold opacity-30">4</span> Limites e Ética
             </a>
-            <a href="#capitulo-5" class="flex items-center gap-3 py-2.5 px-4 rounded-lg text-sm text-gray-600 hover:bg-blue-50 hover:text-book-accent transition-all group">
+            <a href="#capitulo-5" class="flex items-center gap-3 py-2 px-4 rounded-lg text-gray-600 hover:bg-blue-50 hover:text-book-accent transition">
                 <span class="w-4 text-center font-bold opacity-30">5</span> A Arte do Prompt
             </a>
-            <a href="#capitulo-6" class="flex items-center gap-3 py-2.5 px-4 rounded-lg text-sm text-gray-600 hover:bg-blue-50 hover:text-book-accent transition-all group">
+            <a href="#capitulo-6" class="flex items-center gap-3 py-2 px-4 rounded-lg text-gray-600 hover:bg-blue-50 hover:text-book-accent transition">
                 <span class="w-4 text-center font-bold opacity-30">6</span> Visão de Futuro
             </a>
-            <div class="pt-4 pb-2 px-4 border-t border-gray-50 mt-4">
-                <a href="#sobre-o-autor" class="flex items-center gap-3 py-2.5 px-4 rounded-lg text-sm font-bold text-book-accent bg-blue-50/50 hover:bg-blue-50 transition-all group">
+            <div class="pt-6 border-t border-gray-100 mt-6">
+                <a href="#sobre-o-autor" class="flex items-center gap-3 py-2 px-4 rounded-lg font-bold text-book-accent bg-blue-50 transition">
                     <i data-lucide="user" class="w-4 h-4"></i> Sobre o Autor
                 </a>
             </div>
         </nav>
-        
-        <div class="p-6 border-t border-gray-100 bg-gray-50/50">
-            <p class="text-[10px] font-sans text-gray-400 text-center">Sérgio Longo © 2026</p>
-        </div>
     </aside>
 
     <!-- Overlay Mobile -->
-    <div id="overlay" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-30 hidden md:hidden"></div>
+    <div id="overlay" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-30 hidden"></div>
 
-    <!-- Conteúdo Principal -->
+    <!-- Main Content -->
     <main class="flex-1 md:ml-64 lg:ml-72 bg-book-paper">
         
         <!-- Capa -->
@@ -136,15 +122,9 @@
             <div class="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/80 to-transparent"></div>
             
             <div class="relative z-10 p-8 md:p-16 max-w-4xl text-center flex flex-col items-center">
-                <!-- Branding Anthropic -->
-                <div class="mb-10 p-4 bg-white/5 rounded-2xl backdrop-blur-md border border-white/10 shadow-2xl">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Anthropic_logo.svg/512px-Anthropic_logo.svg.png" alt="Anthropic Logo" class="h-8 md:h-10 invert">
-                    <div class="mt-2 text-book-anthropic font-sans text-[10px] tracking-[0.4em] uppercase font-black">Claude Artificial Intelligence</div>
-                </div>
-
-                <span class="inline-block py-1.5 px-4 border border-white/20 rounded-full text-[10px] font-sans tracking-[0.3em] uppercase mb-8 backdrop-blur-sm bg-white/5">Digital Transformation Guia</span>
+                <span class="inline-block py-1.5 px-4 border border-white/20 rounded-full text-[10px] font-sans tracking-[0.3em] uppercase mb-8 backdrop-blur-sm bg-white/5">Transformação Digital Jurídica</span>
                 <h1 class="font-heading text-6xl md:text-8xl font-bold mb-8 leading-[1.05] tracking-tight">Inteligência Artificial<br><span class="text-book-anthropic italic">na Advocacia</span></h1>
-                <p class="font-serif text-xl md:text-2xl font-light text-gray-400 max-w-2xl mx-auto mb-16 leading-relaxed">O guia prático definitivo para o advogado que busca dominar o futuro da profissão.</p>
+                <p class="font-serif text-xl md:text-2xl font-light text-gray-400 max-w-2xl mx-auto mb-16 leading-relaxed">O guia prático para dominar a tecnologia que está redefinindo o Direito.</p>
                 
                 <div class="flex flex-col items-center gap-3">
                     <div class="w-12 h-[1px] bg-white/20"></div>
@@ -159,24 +139,17 @@
             <!-- Apresentação -->
             <section id="apresentacao" class="scroll-mt-32">
                 <h2 class="font-heading text-4xl font-bold text-book-accent mb-8 border-b border-gray-100 pb-6 leading-tight tracking-tight">Apresentação</h2>
-                <div class="prose prose-lg max-w-none text-gray-800">
-                    <p class="drop-cap mb-8 leading-relaxed text-xl">
-                        Este material nasceu de uma convicção simples: a inteligência artificial já está transformando o exercício da advocacia. O profissional que entender essa transformação com profundidade — não apenas na superfície — terá uma vantagem real sobre quem a ignora ou a teme.
-                    </p>
-                    <p class="mb-8 leading-relaxed">
-                        Não se trata de um guia para entusiastas de tecnologia. Trata-se de um material pensado para advogados sérios, com carreiras consolidadas, que querem entender o que de fato está acontecendo neste campo e como podem usar essas ferramentas com segurança e responsabilidade.
-                    </p>
-                </div>
-                
-                <div class="my-12 bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex gap-6 items-start transform hover:scale-[1.01] transition-transform">
-                    <div class="p-4 bg-blue-50 rounded-xl text-book-accent shrink-0">
-                        <i data-lucide="compass" class="w-8 h-8"></i>
-                    </div>
+                <p class="drop-cap mb-8 leading-relaxed text-xl">
+                    Este material nasceu de uma convicção simples: a inteligência artificial já está transformando o exercício da advocacia. O profissional que entender essa transformação com profundidade terá uma vantagem real sobre quem a ignora ou a teme.
+                </p>
+                <p class="mb-8 leading-relaxed">
+                    Não se trata de um guia para entusiastas de tecnologia. Trata-se de um material pensado para advogados sérios, com carreiras consolidadas, que querem entender o que de fato está acontecendo nesse campo.
+                </p>
+                <div class="my-12 bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex gap-6 items-start">
+                    <div class="p-4 bg-blue-50 rounded-xl text-book-accent shrink-0"><i data-lucide="compass" class="w-8 h-8"></i></div>
                     <div>
                         <h4 class="font-sans font-bold text-gray-900 mb-2 text-lg">Nosso Foco: Claude (Anthropic)</h4>
-                        <p class="text-base text-gray-600 font-sans leading-relaxed">
-                            A escolha do Claude não é arbitrária. Ao final da leitura, você terá clareza sobre o que a IA pode (e não pode) fazer pelo seu trabalho, e saberá começar a usá-la de forma produtiva e ética.
-                        </p>
+                        <p class="text-base text-gray-600 font-sans leading-relaxed">A escolha do Claude não é arbitrária. Ao final da leitura, saberá como começar a usá-lo de forma produtiva e ética.</p>
                     </div>
                 </div>
             </section>
@@ -184,48 +157,28 @@
             <!-- Capítulo 1 -->
             <section id="capitulo-1" class="scroll-mt-32 chapter-bg p-10 -mx-10 rounded-3xl">
                 <p class="font-sans text-xs font-bold text-book-accent uppercase tracking-[0.3em] mb-4">Capítulo 01</p>
-                <h2 class="font-heading text-4xl font-bold text-gray-900 mb-10 leading-tight tracking-tight">O Cenário Atual da IA no Direito</h2>
-                
-                <figure class="mb-10 rounded-2xl overflow-hidden shadow-2xl relative group">
-                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80" alt="IA Visual" class="w-full h-80 object-cover transform group-hover:scale-105 transition duration-1000">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <h2 class="font-heading text-4xl font-bold text-gray-900 mb-10 leading-tight">O Cenário Atual da IA no Direito</h2>
+                <figure class="mb-10 rounded-2xl overflow-hidden shadow-2xl relative">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80" alt="IA" class="w-full h-80 object-cover">
                     <figcaption class="absolute bottom-0 p-8 text-white text-sm font-sans italic opacity-90">A transformação digital redefinindo o ecossistema dos tribunais.</figcaption>
                 </figure>
-
-                <p class="mb-8 leading-relaxed text-gray-800">
-                    A inteligência artificial deixou de ser tema de ficção científica e passou a ocupar escritórios. O que mudou foi a capacidade dos <strong>Modelos de Linguagem de Grande Escala (LLMs)</strong> de lidar com textos complexos: contratos de centenas de páginas, pareceres e jurisprudência extensa.
-                </p>
-
-                <div class="bg-white border-l-4 border-book-highlight p-8 rounded-r-2xl shadow-sm italic text-gray-700 leading-relaxed font-serif">
-                    "A IA não substituiu o advogado. Ela mudou o que o advogado precisa saber fazer. Profissionais que ignoram essas ferramentas já estão trabalhando de forma mais lenta e custosa."
-                </div>
+                <p class="mb-8 leading-relaxed">A inteligência artificial deixou de ser ficção científica e passou a ocupar escritórios. O que mudou foi a capacidade dos LLMs de lidar com textos complexos: contratos, pareceres e jurisprudência extensa.</p>
             </section>
 
             <!-- Capítulo 2 -->
             <section id="capitulo-2" class="scroll-mt-32">
                 <p class="font-sans text-xs font-bold text-book-accent uppercase tracking-[0.3em] mb-4">Capítulo 02</p>
-                <h2 class="font-heading text-4xl font-bold text-gray-900 mb-10 leading-tight tracking-tight">Por que o Claude?</h2>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-10">
-                    <div class="bg-white border border-gray-100 p-8 rounded-2xl hover:shadow-lg transition group">
-                        <i data-lucide="maximize" class="w-10 h-10 text-book-accent mb-6 opacity-60 group-hover:opacity-100 transition"></i>
-                        <h4 class="font-heading text-xl font-bold text-gray-900 mb-3">Janela de Contexto</h4>
-                        <p class="text-sm font-sans text-gray-600 leading-relaxed">Consegue ler processos volumosos e contratos extensos em uma única interação sem perder a coerência argumentativa.</p>
+                <h2 class="font-heading text-4xl font-bold text-gray-900 mb-10 leading-tight">Por que o Claude?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-10 font-sans text-sm">
+                    <div class="bg-white border border-gray-100 p-8 rounded-2xl hover:shadow-lg transition">
+                        <i data-lucide="maximize" class="w-10 h-10 text-book-accent mb-6 opacity-60"></i>
+                        <h4 class="font-bold text-gray-900 mb-3">Janela de Contexto</h4>
+                        <p class="text-gray-600 leading-relaxed">Lê processos volumosos sem perder a coerência argumentativa.</p>
                     </div>
-                    <div class="bg-white border border-gray-100 p-8 rounded-2xl hover:shadow-lg transition group">
-                        <i data-lucide="shield-check" class="w-10 h-10 text-book-accent mb-6 opacity-60 group-hover:opacity-100 transition"></i>
-                        <h4 class="font-heading text-xl font-bold text-gray-900 mb-3">IA Constitucional</h4>
-                        <p class="text-sm font-sans text-gray-600 leading-relaxed">Menos propenso a afirmações precipitadas. Sinaliza incerteza ao invés de inventar com confiança.</p>
-                    </div>
-                    <div class="bg-white border border-gray-100 p-8 rounded-2xl hover:shadow-lg transition group">
-                        <i data-lucide="feather" class="w-10 h-10 text-book-accent mb-6 opacity-60 group-hover:opacity-100 transition"></i>
-                        <h4 class="font-heading text-xl font-bold text-gray-900 mb-3">Precisão Técnica</h4>
-                        <p class="text-sm font-sans text-gray-600 leading-relaxed">Produz textos com nível de formalidade e rigor técnico altamente adequados ao rigor jurídico brasileiro.</p>
-                    </div>
-                    <div class="bg-white border border-gray-100 p-8 rounded-2xl hover:shadow-lg transition group">
-                        <i data-lucide="lock" class="w-10 h-10 text-book-accent mb-6 opacity-60 group-hover:opacity-100 transition"></i>
-                        <h4 class="font-heading text-xl font-bold text-gray-900 mb-3">Privacidade Ética</h4>
-                        <p class="text-sm font-sans text-gray-600 leading-relaxed">Postura conservadora: não utiliza seus dados confidenciais para treinar novos modelos por padrão.</p>
+                    <div class="bg-white border border-gray-100 p-8 rounded-2xl hover:shadow-lg transition">
+                        <i data-lucide="shield-check" class="w-10 h-10 text-book-accent mb-6 opacity-60"></i>
+                        <h4 class="font-bold text-gray-900 mb-3">IA Constitucional</h4>
+                        <p class="text-gray-600 leading-relaxed">Tende a sinalizar incerteza em vez de inventar com confiança.</p>
                     </div>
                 </div>
             </section>
@@ -233,122 +186,60 @@
             <!-- Capítulo 3 -->
             <section id="capitulo-3" class="scroll-mt-32 chapter-bg p-10 -mx-10 rounded-3xl">
                 <p class="font-sans text-xs font-bold text-book-accent uppercase tracking-[0.3em] mb-4">Capítulo 03</p>
-                <h2 class="font-heading text-4xl font-bold text-gray-900 mb-10 leading-tight tracking-tight">Aplicações Práticas</h2>
-
-                <figure class="mb-10 rounded-2xl overflow-hidden shadow-2xl group">
-                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80" alt="Análise Jurídica" class="w-full h-80 object-cover transform group-hover:scale-105 transition duration-1000">
-                </figure>
-
-                <div class="space-y-8 font-sans">
+                <h2 class="font-heading text-4xl font-bold text-gray-900 mb-10 leading-tight">Aplicações Práticas</h2>
+                <div class="space-y-6 font-sans">
                     <div class="flex gap-6 p-6 bg-white/50 rounded-2xl border border-white/80">
-                        <div class="w-12 h-12 bg-green-50 text-green-600 rounded-xl flex items-center justify-center shrink-0">
-                            <i data-lucide="search" class="w-6 h-6"></i>
-                        </div>
+                        <div class="w-12 h-12 bg-green-50 text-green-600 rounded-xl flex items-center justify-center shrink-0"><i data-lucide="search" class="w-6 h-6"></i></div>
                         <div>
-                            <h4 class="font-bold text-gray-900 mb-1">Análise de Contratos</h4>
-                            <p class="text-gray-600 text-sm leading-relaxed">Identifica cláusulas problemáticas, lacunas e riscos específicos sob a ótica defensiva do seu cliente.</p>
+                            <h4 class="font-bold text-gray-900 mb-1 text-base">Análise de Contratos</h4>
+                            <p class="text-gray-600 text-sm">Identifica cláusulas problemáticas e riscos específicos.</p>
                         </div>
                     </div>
                     <div class="flex gap-6 p-6 bg-white/50 rounded-2xl border border-white/80">
-                        <div class="w-12 h-12 bg-green-50 text-green-600 rounded-xl flex items-center justify-center shrink-0">
-                            <i data-lucide="pen-tool" class="w-6 h-6"></i>
-                        </div>
+                        <div class="w-12 h-12 bg-green-50 text-green-600 rounded-xl flex items-center justify-center shrink-0"><i data-lucide="zap" class="w-6 h-6"></i></div>
                         <div>
-                            <h4 class="font-bold text-gray-900 mb-1">Minutas e Peças</h4>
-                            <p class="text-gray-600 text-sm leading-relaxed">Elabora minutas iniciais de petições e recursos, eliminando a barreira da "folha em branco".</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-6 p-6 bg-white/50 rounded-2xl border border-white/80">
-                        <div class="w-12 h-12 bg-green-50 text-green-600 rounded-xl flex items-center justify-center shrink-0">
-                            <i data-lucide="zap" class="w-6 h-6"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-gray-900 mb-1">Simulação de Contra-argumentação</h4>
-                            <p class="text-gray-600 text-sm leading-relaxed">Peça ao Claude para assumir o papel do adverso e apontar fragilidades na sua própria tese.</p>
+                            <h4 class="font-bold text-gray-900 mb-1 text-base">Simulação de Contra-argumentação</h4>
+                            <p class="text-gray-600 text-sm">Identifique fragilidades na sua tese antes da audiência.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Capítulo 4 -->
+            <!-- Capítulos 4, 5, 6 (Resumidos para brevidade) -->
             <section id="capitulo-4" class="scroll-mt-32">
-                <p class="font-sans text-xs font-bold text-red-600 uppercase tracking-[0.3em] mb-4">Capítulo 04</p>
-                <h2 class="font-heading text-4xl font-bold text-gray-900 mb-10 leading-tight tracking-tight">Limites e Ética</h2>
-                
-                <div class="bg-red-50 border-l-4 border-red-500 p-10 rounded-r-3xl my-10 shadow-sm">
-                    <h4 class="font-sans font-bold text-red-900 mb-6 flex items-center gap-3 text-lg uppercase tracking-tight">
-                        <i data-lucide="alert-circle" class="w-6 h-6"></i> Alerta Profissional Crítico
-                    </h4>
-                    <ul class="space-y-6 font-sans text-red-900">
-                        <li class="flex gap-4">
-                            <span class="font-bold text-xl opacity-40 italic">01.</span>
-                            <div><strong>Alucinações:</strong> A IA pode inventar leis ou decisões. A validação na fonte primária não é opcional, é dever.</div>
-                        </li>
-                        <li class="flex gap-4">
-                            <span class="font-bold text-xl opacity-40 italic">02.</span>
-                            <div><strong>Sigilo Absoluto:</strong> Nunca insira dados identificáveis de clientes (nomes, CPFs, processos). A anonimização prévia é regra de ouro.</div>
-                        </li>
-                        <li class="flex gap-4">
-                            <span class="font-bold text-xl opacity-40 italic">03.</span>
-                            <div><strong>Responsabilidade Pessoal:</strong> O produto final é de autoria do advogado assinante. Usar IA não dilui sua responsabilidade ética.</div>
-                        </li>
+                <h2 class="font-heading text-4xl font-bold text-red-600 mb-8">Limites e Ética</h2>
+                <div class="bg-red-50 border-l-4 border-red-500 p-8 rounded-r-2xl">
+                    <ul class="space-y-4 font-sans text-red-900 text-sm">
+                        <li><strong>Alucinações:</strong> A IA pode inventar leis. Valide sempre na fonte primária.</li>
+                        <li><strong>Sigilo:</strong> Nunca insira dados reais (CPFs, nomes) de clientes.</li>
                     </ul>
                 </div>
             </section>
 
-            <!-- Capítulo 5 -->
-            <section id="capitulo-5" class="scroll-mt-32 chapter-bg p-10 -mx-10 rounded-3xl">
-                <p class="font-sans text-xs font-bold text-book-accent uppercase tracking-[0.3em] mb-4">Capítulo 05</p>
-                <h2 class="font-heading text-4xl font-bold text-gray-900 mb-10 leading-tight tracking-tight">A Arte do Prompt</h2>
-
-                <p class="mb-10 text-gray-700 leading-relaxed">A qualidade do resultado é proporcional à qualidade da instrução (o prompt). Advogados que dominam a engenharia de prompts extraem 10x mais valor da ferramenta.</p>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="bg-white border border-red-100 rounded-2xl p-8 shadow-sm relative overflow-hidden">
-                        <div class="absolute top-0 right-0 p-3 bg-red-50 text-red-400"><i data-lucide="x-circle" class="w-5 h-5"></i></div>
-                        <h5 class="text-xs font-bold text-red-500 uppercase mb-4 tracking-widest">Ineficiente</h5>
-                        <p class="font-sans text-gray-600 italic leading-relaxed">"Analise este contrato e me diga se está bom."</p>
-                    </div>
-                    <div class="bg-white border border-green-100 rounded-2xl p-8 shadow-sm relative overflow-hidden">
-                        <div class="absolute top-0 right-0 p-3 bg-green-50 text-green-400"><i data-lucide="check-circle" class="w-5 h-5"></i></div>
-                        <h5 class="text-xs font-bold text-green-500 uppercase mb-4 tracking-widest">Profissional</h5>
-                        <p class="font-sans text-gray-700 italic leading-relaxed text-sm">
-                            "Atue como advogado sênior. Analise este contrato focando nos interesses do Contratante. Identifique riscos de rescisão e sugira redações alternativas."
-                        </p>
-                    </div>
-                </div>
+            <section id="capitulo-5" class="scroll-mt-32">
+                <h2 class="font-heading text-4xl font-bold text-gray-900 mb-8">A Arte do Prompt</h2>
+                <p class="mb-8 leading-relaxed">Seja específico:Contexto + Papel + Tarefa + Formato.</p>
             </section>
 
-            <!-- Capítulo 6 -->
             <section id="capitulo-6" class="scroll-mt-32">
-                <p class="font-sans text-xs font-bold text-book-accent uppercase tracking-[0.3em] mb-4">Capítulo 06</p>
-                <h2 class="font-heading text-4xl font-bold text-gray-900 mb-10 leading-tight tracking-tight">Visão de Futuro</h2>
-                
-                <blockquote class="text-2xl font-heading italic text-center text-book-accent my-16 border-y border-gray-100 py-12 px-8 leading-relaxed">
-                    "A inteligência artificial não vai substituir o advogado. Mas o advogado que usa IA vai substituir o que não usa."
-                </blockquote>
-
-                <p class="mb-10 text-gray-800 leading-relaxed">
-                    O advogado do futuro próximo é aquele que usa a IA para ser mais rápido nas tarefas mecânicas e mais profundo nas tarefas que exigem julgamento. Ele entrega mais, em menos tempo, com maior qualidade — não porque trabalha mais, mas porque usa melhor as ferramentas disponíveis.
-                </p>
+                <h2 class="font-heading text-4xl font-bold text-gray-900 mb-8">Visão de Futuro</h2>
+                <p class="mb-8 leading-relaxed">A IA não vai substituir o advogado, mas o advogado que usa IA substituirá o que não usa.</p>
             </section>
 
             <!-- Sobre o Autor -->
-            <section id="sobre-o-autor" class="scroll-mt-32 bg-white border border-gray-100 p-10 md:p-16 rounded-3xl shadow-xl flex flex-col md:flex-row gap-12 items-center md:items-start transition-all hover:border-book-accent/20">
+            <section id="sobre-o-autor" class="scroll-mt-32 bg-white border border-gray-100 p-10 md:p-16 rounded-3xl shadow-xl flex flex-col md:flex-row gap-12 items-center md:items-start">
                 <div class="w-40 h-40 md:w-56 md:h-56 shrink-0 rounded-full overflow-hidden border-8 border-book-paper shadow-2xl">
-                    <img src="https://i.ibb.co/GyVSLT4/Perfil.png" alt="Sérgio Longo" class="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition duration-500">
+                    <img src="https://i.ibb.co/GyVSLT4/Perfil.png" alt="Sérgio Longo" class="w-full h-full object-cover">
                 </div>
                 <div class="text-center md:text-left">
                     <h3 class="font-heading text-4xl font-bold text-gray-900 mb-2">Sobre o Autor</h3>
                     <h4 class="font-sans text-xl font-medium text-book-accent mb-6">Sérgio Longo</h4>
                     <p class="font-sans text-gray-700 leading-relaxed mb-8 text-lg">
-                        É um advogado militante, que atua com empresas de inovação. Especialista na intersecção entre Direito e Tecnologia, tem como missão guiar advogados modernos na adoção ética, segura e estratégica da Inteligência Artificial. Acredita que a tecnologia não substitui o talento humano, mas potencializa os resultados daqueles que sabem utilizá-la.
+                        É um advogado militante, que atua com empresas de inovação. Especialista na intersecção entre Direito e Tecnologia, tem como missão guiar advogados modernos na adoção ética, segura e estratégica da Inteligência Artificial.
                     </p>
-                    <div class="flex flex-col sm:flex-row items-center gap-4">
-                        <a href="https://www.linkedin.com/in/sergio-longo/" target="_blank" class="inline-flex items-center gap-3 font-sans font-bold text-white transition-all bg-[#0077b5] hover:bg-[#005c8d] px-8 py-4 rounded-xl shadow-lg">
-                            <i data-lucide="linkedin" class="w-5 h-5"></i> Conectar no LinkedIn
-                        </a>
-                    </div>
+                    <a href="https://www.linkedin.com/in/sergio-longo/" target="_blank" class="inline-flex items-center gap-3 font-sans font-bold text-white bg-[#0077b5] hover:bg-[#005c8d] px-8 py-4 rounded-xl shadow-lg transition">
+                        <i data-lucide="linkedin" class="w-5 h-5"></i> Conectar no LinkedIn
+                    </a>
                 </div>
             </section>
 
@@ -358,25 +249,15 @@
         <div id="share-section" class="max-w-3xl mx-auto px-6 pb-32 text-center">
             <div class="bg-[#1a1a1a] p-12 rounded-[2.5rem] shadow-2xl text-white">
                 <h3 class="font-heading text-3xl font-bold mb-4 tracking-tight">Compartilhe este Guia</h3>
-                <p class="font-sans text-gray-400 mb-10 max-w-sm mx-auto text-sm leading-relaxed">Ajude outros advogados a modernizarem suas práticas através do domínio do Claude.</p>
                 <button onclick="shareWhatsApp()" class="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1DA851] text-white font-sans font-bold px-12 py-6 rounded-2xl transition shadow-2xl transform hover:-translate-y-1">
-                    <i data-lucide="message-circle" class="w-6 h-6"></i>
-                    Enviar via WhatsApp
+                    <i data-lucide="message-circle" class="w-6 h-6"></i> Enviar via WhatsApp
                 </button>
             </div>
         </div>
-
-        <footer class="bg-white border-t border-gray-100 py-16 text-center px-6">
-            <p class="font-sans text-[10px] text-gray-400 uppercase tracking-[0.4em] mb-4 italic">Material de Orientação Profissional Jurídica</p>
-            <p class="font-sans text-xs text-gray-400 italic">© 2026 Sérgio Longo. Todos os direitos reservados.</p>
-        </footer>
     </main>
 
     <script>
-        // Iniciar ícones do Lucide
         lucide.createIcons();
-
-        // Menu Mobile Toggle
         const menuBtn = document.getElementById('menu-btn');
         const sidebar = document.getElementById('sidebar');
         const overlay = document.getElementById('overlay');
@@ -389,31 +270,16 @@
         menuBtn.addEventListener('click', toggleMenu);
         overlay.addEventListener('click', toggleMenu);
 
-        // Fechar menu ao clicar num link (Mobile)
-        document.querySelectorAll('#sidebar nav a').forEach(anchor => {
-            anchor.addEventListener('click', () => {
-                if (window.innerWidth < 768) toggleMenu();
-            });
+        document.querySelectorAll('#sidebar nav a').forEach(a => {
+            a.addEventListener('click', () => { if (window.innerWidth < 768) toggleMenu(); });
         });
 
-        // WhatsApp Share
         function shareWhatsApp() {
-            let url = window.location.href;
-            let text = "Dê uma olhada neste E-book sobre Inteligência Artificial na Advocacia! Um guia prático excelente para modernizarmos nossa prática jurídica.";
-            
-            if (url.startsWith('http')) {
-                text += "\n\nLink: " + url;
-            } else {
-                text += "\n\n(Encaminhe o ficheiro .html deste E-book junto com esta mensagem!)";
-            }
-            
-            const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(text)}`;
-            
-            try {
-                window.open(whatsappUrl, '_blank');
-            } catch (e) {
-                window.location.href = whatsappUrl;
-            }
+            const url = window.location.href;
+            let text = "Dê uma olhada neste E-book sobre Inteligência Artificial na Advocacia!";
+            if (url.startsWith('http')) text += "\n\nLink: " + url;
+            else text += "\n\n(Encaminhe o ficheiro index.html junto com esta mensagem!)";
+            window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
         }
     </script>
 </body>
